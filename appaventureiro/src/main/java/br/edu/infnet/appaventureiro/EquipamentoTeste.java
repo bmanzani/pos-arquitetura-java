@@ -46,7 +46,5 @@ public class EquipamentoTeste implements ApplicationRunner{
 		feitico3.setQtdemana(20);
 		feitico3.setClasse("Mago");
 		System.out.println("> - " + feitico3);
-		
-		
 	}
 }
