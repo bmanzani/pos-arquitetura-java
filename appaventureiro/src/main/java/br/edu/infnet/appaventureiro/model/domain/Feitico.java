@@ -1,13 +1,45 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
 public class Feitico extends Equipamento {
-	public boolean consumivel;
-	public float qtdemana;
-	public String elemento;
-	public String classe;
+	private boolean consumivel;
+	private float qtdemana;
+	private String elemento;
+	private String classe;
 	
+	public boolean isConsumivel() {
+		return consumivel;
+	}
+
+	public void setConsumivel(boolean consumivel) {
+		this.consumivel = consumivel;
+	}
+
+	public float getQtdemana() {
+		return qtdemana;
+	}
+
+	public void setQtdemana(float qtdemana) {
+		this.qtdemana = qtdemana;
+	}
+
+	public String getElemento() {
+		return elemento;
+	}
+
+	public void setElemento(String elemento) {
+		this.elemento = elemento;
+	}
+
+	public String getClasse() {
+		return classe;
+	}
+
+	public void setClasse(String classe) {
+		this.classe = classe;
+	}
+
 	@Override
 	public String toString() {
-		return consumivel + ";" + qtdemana + ";" + elemento+ ";" + classe;
+		return super.toString() + consumivel + ";" + qtdemana + ";" + elemento+ ";" + classe;
 	}
 }

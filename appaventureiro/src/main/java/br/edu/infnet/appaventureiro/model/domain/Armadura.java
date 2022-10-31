@@ -1,12 +1,36 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
 public class Armadura extends Equipamento {
-	public boolean encantada;
-	public float defesa;
-	public String recomendacoes;
+	private boolean encantada;
+	private float defesa;
+	private String recomendacoes;
 	
 	@Override
 	public String toString() {
-		return encantada + ";" + defesa + ";" + recomendacoes;
+		return super.toString() + encantada + ";" + defesa + ";" + recomendacoes;
 	}
+
+	public boolean isEncantada() {
+		return encantada;
+	}
+
+	public void setEncantada(boolean encantada) {
+		this.encantada = encantada;
+	}
+
+	public float getDefesa() {
+		return defesa;
+	}
+
+	public void setDefesa(float defesa) {
+		this.defesa = defesa;
+	}
+
+	public String getRecomendacoes() {
+		return recomendacoes;
+	}
+
+	public void setRecomendacoes(String recomendacoes) {
+		this.recomendacoes = recomendacoes;
+	}	
 }

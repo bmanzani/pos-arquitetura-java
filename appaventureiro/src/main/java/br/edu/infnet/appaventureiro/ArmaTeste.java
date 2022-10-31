@@ -10,26 +10,40 @@ public class ArmaTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+		System.out.println("## Cadastramento de Armas ##");
+		
 		Arma arma1 =  new Arma();
-		arma1.ranged = true;
-		arma1.peso = 5;
-		arma1.elemento = "Fogo";
-		arma1.tipo = "Arco";		
+		arma1.setCodigo(2);
+		arma1.setNome("Machado do Ferreiro");
+		arma1.setValor(200);
+		arma1.setLevel(20);
+		arma1.setRanged(false);
+		arma1.setPeso(5);
+		arma1.setElemento("Fogo");
+		arma1.setTipo("Machado");		
+		System.out.println("> - "+ arma1);
 		
 		Arma arma2 = new Arma();
-		arma2.ranged = false;
-		arma2.peso = 2;
-		arma2.elemento = "Gelo";
-		arma2.tipo = "Adaga";
+		arma2.setCodigo(3);
+		arma2.setNome("Arco de Madeira");
+		arma2.setValor(100);
+		arma2.setLevel(5);
+		arma2.isRanged();
+		arma2.setPeso(5);
+		arma2.setElemento("Não Elemental");
+		arma2.setTipo("Arco");	
+		System.out.println("> - "+ arma2);
 		
 		Arma arma3 = new Arma();
-		arma3.ranged = true;
-		arma3.peso = 4;
-		arma3.elemento = "Veneno";
-		arma3.tipo = "Besta";
-		
-		System.out.println("Arma - "+ arma1);
-		System.out.println("Arma - "+ arma2);
-		System.out.println("Arma - "+ arma3);
+		arma3.setCodigo(3);
+		arma3.setNome("Adaga de Ladino");
+		arma3.setValor(50000);
+		arma3.setLevel(60);
+		arma3.setRanged(false);
+		arma3.setPeso(2);
+		arma3.setElemento("Veneno");
+		arma3.setTipo("Adaga");	
+		System.out.println("> - "+ arma3);
 	}
 }

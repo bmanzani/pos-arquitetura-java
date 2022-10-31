@@ -10,12 +10,25 @@ public class AventureiroTeste implements ApplicationRunner{
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+		System.out.println("## Cadastramento de Aventureiros ##");
+		
 		Aventureiro aventureiro1 = new Aventureiro();
+		aventureiro1.setLevel(60);;
+		aventureiro1.setClasse("Guerreiro");
+		aventureiro1.setNome("Ragnir");
+		System.out.println("> - " + aventureiro1);
 		
-		aventureiro1.level = 60;
-		aventureiro1.classe = "Guerreiro";
-		aventureiro1.nome = "Ragnir";
+		Aventureiro aventureiro2 = new Aventureiro();
+		aventureiro2.setLevel(60);;
+		aventureiro2.setClasse("Mago");
+		aventureiro2.setNome("Freij");
+		System.out.println("> - " + aventureiro2);
 		
-		System.out.println("Aventureiro - " + aventureiro1);
+		Aventureiro aventureiro3 = new Aventureiro();
+		aventureiro3.setLevel(60);;
+		aventureiro3.setClasse("Caçador");
+		aventureiro3.setNome("Siegfried");
+		System.out.println("> - " + aventureiro3);
 	}
 }

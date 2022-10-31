@@ -10,12 +10,41 @@ public class FeiticoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		Feitico feitico1 =  new Feitico();
 		
-		feitico1.consumivel = true;
-		feitico1.elemento = "gelo";
-		feitico1.qtdemana = 20;
-		feitico1.classe = "todas";
-		System.out.println("Feitiço - " + feitico1);
+		System.out.println("## Cadastramento de Feitiços ##");
+		
+		
+		Feitico feitico1 =  new Feitico();
+		feitico1.setCodigo(1);
+		feitico1.setNome("Seta de Gelo");
+		feitico1.setValor(200);
+		feitico1.setLevel(10);
+		feitico1.isConsumivel();
+		feitico1.setElemento("Gelo");
+		feitico1.setQtdemana(20);
+		feitico1.setClasse("Todas");
+		System.out.println("> - " + feitico1);
+		
+		Feitico feitico2 =  new Feitico();
+		feitico2.setCodigo(2);
+		feitico2.setNome("Bola de Fogo");
+		feitico2.setValor(200);
+		feitico2.setLevel(15);
+		feitico2.isConsumivel();
+		feitico2.setElemento("Fogo");
+		feitico2.setQtdemana(5);
+		feitico2.setClasse("Todas");
+		System.out.println("> - " + feitico2);
+		
+		Feitico feitico3 =  new Feitico();
+		feitico3.setCodigo(3);
+		feitico3.setNome("Rio de Lava");
+		feitico3.setValor(20000);
+		feitico3.setLevel(45);
+		feitico3.setConsumivel(false);
+		feitico3.setElemento("Fogo");
+		feitico3.setQtdemana(20);
+		feitico3.setClasse("Mago");
+		System.out.println("> - " + feitico3);
 	}
 }
