@@ -3,6 +3,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appaventureiro.controller.ArmaduraController;
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
 
 @Component
@@ -21,7 +22,7 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura1.setDefesa(40);
 		armadura1.isEncantada();
 		armadura1.setRecomendacoes("Defesa Física");
-		System.out.println("> - " + armadura1);
+		ArmaduraController.incluir(armadura1);
 		
 		Armadura armadura2 = new Armadura();
 		armadura2.setCodigo(2);
@@ -31,7 +32,7 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura2.setDefesa(80);
 		armadura2.setEncantada(false);
 		armadura2.setRecomendacoes("Defesa Física");
-		System.out.println("> - " + armadura2);
+		ArmaduraController.incluir(armadura2);
 		
 		Armadura armadura3 = new Armadura();
 		armadura3.setCodigo(3);
@@ -41,6 +42,6 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura3.setDefesa(200);
 		armadura3.isEncantada();
 		armadura3.setRecomendacoes("Defesa Híbrida");
-		System.out.println("> - " + armadura3);
+		ArmaduraController.incluir(armadura3);
 	}
 }

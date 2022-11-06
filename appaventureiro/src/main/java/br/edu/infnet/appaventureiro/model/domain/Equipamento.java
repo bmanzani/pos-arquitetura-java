@@ -1,6 +1,7 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
 public abstract class Equipamento {
+	private Integer id;
 	private int codigo;
 	private String nome;
 	private float valor;
@@ -8,7 +9,7 @@ public abstract class Equipamento {
 
 	@Override
 	public String toString() {
-		return codigo + ";" + nome + ";" + valor + ";" + level + ";";
+		return id + ";" + codigo + ";" + nome + ";" + valor + ";" + level + ";";
 	}
 	
 	public int getCodigo() {
@@ -21,6 +22,14 @@ public abstract class Equipamento {
 
 	public String getNome() {
 		return nome;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public void setNome(String nome) {

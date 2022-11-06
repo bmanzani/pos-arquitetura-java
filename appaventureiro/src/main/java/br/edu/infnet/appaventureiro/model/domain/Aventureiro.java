@@ -1,13 +1,14 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
 public class Aventureiro {
+	private Integer id;
 	private String nome;
 	private String classe;
 	private int level;
 	
 	@Override
 	public String toString() {
-		return nome + ";" + classe + ";" + level;
+		return id + ";" + nome + ";" + classe + ";" + level;
 	}
 	
 	public String getNome() {
@@ -16,6 +17,14 @@ public class Aventureiro {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getClasse() {

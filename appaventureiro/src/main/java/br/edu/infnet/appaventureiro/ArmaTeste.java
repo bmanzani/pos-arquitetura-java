@@ -3,6 +3,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appaventureiro.controller.ArmaController;
+import br.edu.infnet.appaventureiro.controller.ArmaduraController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 
 @Component
@@ -22,7 +24,7 @@ public class ArmaTeste implements ApplicationRunner {
 		arma1.setPeso(5);
 		arma1.setElemento("Fogo");
 		arma1.setTipo("Machado");		
-		System.out.println("> - "+ arma1);
+		ArmaController.incluir(arma1);
 		
 		Arma arma2 = new Arma();
 		arma2.setCodigo(3);
@@ -33,7 +35,7 @@ public class ArmaTeste implements ApplicationRunner {
 		arma2.setPeso(5);
 		arma2.setElemento("Não Elemental");
 		arma2.setTipo("Arco");	
-		System.out.println("> - "+ arma2);
+		ArmaController.incluir(arma2);
 		
 		Arma arma3 = new Arma();
 		arma3.setCodigo(3);
@@ -44,6 +46,6 @@ public class ArmaTeste implements ApplicationRunner {
 		arma3.setPeso(2);
 		arma3.setElemento("Veneno");
 		arma3.setTipo("Adaga");	
-		System.out.println("> - "+ arma3);
+		ArmaController.incluir(arma3);
 	}
 }

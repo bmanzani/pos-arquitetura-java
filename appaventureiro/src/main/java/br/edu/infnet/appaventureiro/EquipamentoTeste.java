@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
 import br.edu.infnet.appaventureiro.model.domain.Feitico;
+import br.edu.infnet.appaventureiro.controller.EquipamentoController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 
 @Component
@@ -23,7 +24,7 @@ public class EquipamentoTeste implements ApplicationRunner{
 		armadura1.setDefesa(40);
 		armadura1.isEncantada();
 		armadura1.setRecomendacoes("Defesa Física");
-		System.out.println("> - " + armadura1);
+		EquipamentoController.incluir(armadura1);
 		
 		Arma arma1 =  new Arma();
 		arma1.setCodigo(2);
@@ -34,7 +35,7 @@ public class EquipamentoTeste implements ApplicationRunner{
 		arma1.setPeso(5);
 		arma1.setElemento("Fogo");
 		arma1.setTipo("Machado");		
-		System.out.println("> - "+ arma1);
+		EquipamentoController.incluir(arma1);
 		
 		Feitico feitico3 =  new Feitico();
 		feitico3.setCodigo(3);
@@ -45,6 +46,6 @@ public class EquipamentoTeste implements ApplicationRunner{
 		feitico3.setElemento("Fogo");
 		feitico3.setQtdemana(20);
 		feitico3.setClasse("Mago");
-		System.out.println("> - " + feitico3);
+		EquipamentoController.incluir(feitico3);
 	}
 }
