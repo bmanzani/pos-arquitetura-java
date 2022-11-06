@@ -1,19 +1,24 @@
 package br.edu.infnet.appaventureiro;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appaventureiro.controller.ArmaduraController;
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
+import br.edu.infnet.appaventureiro.model.service.ArmaduraService;
 
 @Component
 public class ArmaduraTeste implements ApplicationRunner {
 
+	@Autowired
+	private ArmaduraService armaduraService;
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
+
 		System.out.println("## Cadastramento de Armaduras ##");
-		
+
 		Armadura armadura1 = new Armadura();
 		armadura1.setCodigo(1);
 		armadura1.setNome("Armadura de Couro");
@@ -22,8 +27,8 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura1.setDefesa(40);
 		armadura1.isEncantada();
 		armadura1.setRecomendacoes("Defesa Física");
-		ArmaduraController.incluir(armadura1);
-		
+		armaduraService.incluir(armadura1);
+
 		Armadura armadura2 = new Armadura();
 		armadura2.setCodigo(2);
 		armadura2.setNome("Armadura de Aço");
@@ -32,8 +37,8 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura2.setDefesa(80);
 		armadura2.setEncantada(false);
 		armadura2.setRecomendacoes("Defesa Física");
-		ArmaduraController.incluir(armadura2);
-		
+		armaduraService.incluir(armadura2);
+
 		Armadura armadura3 = new Armadura();
 		armadura3.setCodigo(3);
 		armadura3.setNome("Armadura de Pele de Dragão");
@@ -42,6 +47,6 @@ public class ArmaduraTeste implements ApplicationRunner {
 		armadura3.setDefesa(200);
 		armadura3.isEncantada();
 		armadura3.setRecomendacoes("Defesa Híbrida");
-		ArmaduraController.incluir(armadura3);
+		armaduraService.incluir(armadura3);
 	}
 }

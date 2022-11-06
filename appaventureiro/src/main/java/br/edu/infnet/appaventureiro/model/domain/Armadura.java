@@ -1,5 +1,10 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tarmadura")
 public class Armadura extends Equipamento {
 	private boolean encantada;
 	private float defesa;

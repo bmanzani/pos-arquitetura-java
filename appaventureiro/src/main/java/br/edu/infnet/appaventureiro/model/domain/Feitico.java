@@ -1,5 +1,10 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tfeitico")
 public class Feitico extends Equipamento {
 	private boolean consumivel;
 	private float qtdemana;

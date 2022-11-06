@@ -1,4 +1,5 @@
 package br.edu.infnet.appaventureiro;
+
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -9,13 +10,13 @@ import br.edu.infnet.appaventureiro.controller.EquipamentoController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 
 @Component
-public class EquipamentoTeste implements ApplicationRunner{
+public class EquipamentoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
+
 		System.out.println("## Cadastramento de Equipamentos ##");
-		
+
 		Armadura armadura1 = new Armadura();
 		armadura1.setCodigo(1);
 		armadura1.setNome("Armadura de Couro");
@@ -25,8 +26,8 @@ public class EquipamentoTeste implements ApplicationRunner{
 		armadura1.isEncantada();
 		armadura1.setRecomendacoes("Defesa Física");
 		EquipamentoController.incluir(armadura1);
-		
-		Arma arma1 =  new Arma();
+
+		Arma arma1 = new Arma();
 		arma1.setCodigo(2);
 		arma1.setNome("Machado do Ferreiro");
 		arma1.setValor(200);
@@ -34,10 +35,10 @@ public class EquipamentoTeste implements ApplicationRunner{
 		arma1.setRanged(false);
 		arma1.setPeso(5);
 		arma1.setElemento("Fogo");
-		arma1.setTipo("Machado");		
+		arma1.setTipo("Machado");
 		EquipamentoController.incluir(arma1);
-		
-		Feitico feitico3 =  new Feitico();
+
+		Feitico feitico3 = new Feitico();
 		feitico3.setCodigo(3);
 		feitico3.setNome("Rio de Lava");
 		feitico3.setValor(20000);

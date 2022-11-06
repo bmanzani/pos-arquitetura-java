@@ -1,5 +1,10 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tarma")
 public class Arma extends Equipamento {
 	private boolean ranged;
 	private float peso;

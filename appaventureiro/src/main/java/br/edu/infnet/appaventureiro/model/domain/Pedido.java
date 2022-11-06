@@ -10,7 +10,7 @@ public class Pedido {
 	private boolean encomenda;
 	private Aventureiro aventureiro;
 	private List<Equipamento> equipamentos;
-	
+
 	public Pedido() {
 		data = LocalDateTime.now();
 		encomenda = true;
@@ -20,12 +20,12 @@ public class Pedido {
 		this();
 		this.aventureiro = aventureiro;
 	}
-	
+
 	@Override
 	public String toString() {
 		return id + ";" + descricao + ";" + data + ";" + encomenda + ";" + aventureiro + ";" + equipamentos.size();
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}

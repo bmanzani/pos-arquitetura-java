@@ -1,14 +1,17 @@
 package br.edu.infnet.appaventureiro;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appaventureiro.controller.ArmaController;
-import br.edu.infnet.appaventureiro.controller.ArmaduraController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
+import br.edu.infnet.appaventureiro.model.service.ArmaService;
 
 @Component
 public class ArmaTeste implements ApplicationRunner {
+	
+	@Autowired
+	private ArmaService armaService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +27,7 @@ public class ArmaTeste implements ApplicationRunner {
 		arma1.setPeso(5);
 		arma1.setElemento("Fogo");
 		arma1.setTipo("Machado");		
-		ArmaController.incluir(arma1);
+		armaService.incluir(arma1);
 		
 		Arma arma2 = new Arma();
 		arma2.setCodigo(3);
@@ -35,7 +38,7 @@ public class ArmaTeste implements ApplicationRunner {
 		arma2.setPeso(5);
 		arma2.setElemento("Não Elemental");
 		arma2.setTipo("Arco");	
-		ArmaController.incluir(arma2);
+		armaService.incluir(arma2);
 		
 		Arma arma3 = new Arma();
 		arma3.setCodigo(3);
@@ -46,6 +49,6 @@ public class ArmaTeste implements ApplicationRunner {
 		arma3.setPeso(2);
 		arma3.setElemento("Veneno");
 		arma3.setTipo("Adaga");	
-		ArmaController.incluir(arma3);
+		armaService.incluir(arma3);
 	}
 }

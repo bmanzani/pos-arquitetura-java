@@ -1,14 +1,10 @@
 package br.edu.infnet.appaventureiro;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
-import br.edu.infnet.appaventureiro.controller.PedidoController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
 import br.edu.infnet.appaventureiro.model.domain.Aventureiro;
@@ -80,14 +76,12 @@ public class PedidoTeste implements ApplicationRunner {
 		pedido1.isEncomenda();
 		pedido1.setAventureiro(aventureiro1);
 		pedido1.setEquipamentos(equipamentosPrimeiroPedido);
-		PedidoController.incluir(pedido1);
 
 		Pedido pedido2 = new Pedido();
 		pedido2.setDescricao("Solicitação imediata de um aventureiro desconhecido");
 		pedido2.setEncomenda(false);
 		pedido2.setAventureiro(aventureiro1);
 		pedido2.setEquipamentos(equipamentosDemaisPedido);
-		PedidoController.incluir(pedido2);
 
 		Pedido pedido3 = new Pedido();
 		pedido3.setDescricao("Encomenda ao Sr. Siegfried");
