@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
@@ -12,6 +13,7 @@ import br.edu.infnet.appaventureiro.model.domain.Equipamento;
 import br.edu.infnet.appaventureiro.model.domain.Feitico;
 import br.edu.infnet.appaventureiro.model.domain.Pedido;
 
+@Order(2)
 @Component
 public class PedidoTeste implements ApplicationRunner {
 

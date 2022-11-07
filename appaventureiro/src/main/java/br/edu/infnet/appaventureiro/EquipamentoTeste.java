@@ -2,6 +2,7 @@ package br.edu.infnet.appaventureiro;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
@@ -9,6 +10,7 @@ import br.edu.infnet.appaventureiro.model.domain.Feitico;
 import br.edu.infnet.appaventureiro.controller.EquipamentoController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 
+@Order(4)
 @Component
 public class EquipamentoTeste implements ApplicationRunner {
 

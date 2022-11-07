@@ -1,12 +1,16 @@
 package br.edu.infnet.appaventureiro.model.domain;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tequipamento")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Equipamento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +24,7 @@ public abstract class Equipamento {
 	public String toString() {
 		return id + ";" + codigo + ";" + nome + ";" + valor + ";" + level + ";";
 	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}

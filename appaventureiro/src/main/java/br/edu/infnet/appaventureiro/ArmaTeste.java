@@ -2,11 +2,13 @@ package br.edu.infnet.appaventureiro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 import br.edu.infnet.appaventureiro.model.service.ArmaService;
 
+@Order(5)
 @Component
 public class ArmaTeste implements ApplicationRunner {
 	
