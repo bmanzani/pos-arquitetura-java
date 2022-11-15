@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appaventureiro.model.domain.Armadura;
 import br.edu.infnet.appaventureiro.model.service.ArmaduraService;
 
-@Order(6)
+@Order(4)
 @Component
 public class ArmaduraTeste implements ApplicationRunner {
 

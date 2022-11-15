@@ -14,6 +14,8 @@
 
 	<div class="container mt-3">
 		<h3>Pedidos : ${listagem.size()}</h3>
+		
+		<h4><a href="/pedido">Novo pedido</a></h4>
 
 		<table class="table table-striped">
 			<thead>

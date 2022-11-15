@@ -1,12 +1,18 @@
 package br.edu.infnet.appaventureiro.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "tequipamento")
@@ -19,6 +25,11 @@ public abstract class Equipamento {
 	private String nome;
 	private float valor;
 	private int level;
+	@ManyToMany(mappedBy = "equipamentos")
+	private List<Pedido> pedidos;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 
 	@Override
 	public String toString() {
@@ -64,4 +75,21 @@ public abstract class Equipamento {
 	public void setLevel(int level) {
 		this.level = level;
 	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
 }
+

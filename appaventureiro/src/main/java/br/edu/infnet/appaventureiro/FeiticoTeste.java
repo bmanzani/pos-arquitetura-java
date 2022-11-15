@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appaventureiro.model.domain.Feitico;
 import br.edu.infnet.appaventureiro.model.service.FeiticoService;
 
-@Order(7)
+@Order(6)
 @Component
 public class FeiticoTeste implements ApplicationRunner {
 

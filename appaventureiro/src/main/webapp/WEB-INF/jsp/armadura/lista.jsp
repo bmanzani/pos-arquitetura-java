@@ -39,7 +39,7 @@
 						<td>${armaduras.level}</td>
 						<td>${armaduras.encantada}</td>
 						<td>${armaduras.defesa}</td>
-						<td>${armaduras.Recomendacoes}</td>
+						<td>${armaduras.recomendacoes}</td>
 						<td><a href="/armadura/${armaduras.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

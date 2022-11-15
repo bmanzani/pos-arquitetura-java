@@ -1,49 +1,65 @@
 package br.edu.infnet.appaventureiro.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Collection;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appaventureiro.model.domain.Pedido;
+import br.edu.infnet.appaventureiro.model.domain.Usuario;
+import br.edu.infnet.appaventureiro.model.service.AventureiroService;
+import br.edu.infnet.appaventureiro.model.service.EquipamentoService;
+import br.edu.infnet.appaventureiro.model.service.PedidoService;
 
 @Controller
 public class PedidoController {
 
-	private static Map<Integer, Pedido> mapa = new HashMap<Integer, Pedido>();
-	private static Integer id = 1;
+	@Autowired
+	private PedidoService pedidoService;
+	@Autowired
+	private AventureiroService aventureiroService;
+	@Autowired
+	private EquipamentoService equipamentoService;
+	
+	@GetMapping(value = "/pedido")
+	public String telaCadastro(Model model, @SessionAttribute("user") Usuario usuario) {
 
-	public static void incluir(Pedido pedido) {
-		pedido.setId(id++);
-		mapa.put(pedido.getId(), pedido);
+		model.addAttribute("aventureiros", aventureiroService.obterLista(usuario));
 
-		System.out.println("> " + pedido);
+		model.addAttribute("equipamentos", equipamentoService.obterLista(usuario));
+		
+		return "pedido/cadastro";
 	}
-
-	public static void excluir(Integer id) {
-		mapa.remove(id);
-	}
-
-	public static Collection<Pedido> obterLista() {
-		return mapa.values();
-	}
-
+	
 	@GetMapping(value = "/pedido/lista")
-	public String telaLista(Model model) {
-		model.addAttribute("listagem", obterLista());
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
+		model.addAttribute("listagem", pedidoService.obterLista(usuario));
+
 		return "pedido/lista";
 	}
-
-
-	@GetMapping(value = "/pedido/{id}/excluir")
-	public String exclusao(@PathVariable Integer id) {
-
-		excluir(id);
-
+	
+	@PostMapping(value = "/pedido/incluir")
+	public String incluir(Pedido pedido, @SessionAttribute("user") Usuario usuario) {
+		
+		System.out.println("Aventureiros: " + pedido.getAventureiro());		
+		System.out.println("Produtos: " + pedido.getEquipamentos());
+		
+		pedido.setUsuario(usuario);
+		
+		pedidoService.incluir(pedido);
+		
 		return "redirect:/pedido/lista";
 	}
+	
+	@GetMapping(value = "/pedido/{id}/excluir")
+	public String excluir(@PathVariable Integer id) {
+
+		pedidoService.excluir(id);
+		
+		return "redirect:/pedido/lista";
+	}
+
 }

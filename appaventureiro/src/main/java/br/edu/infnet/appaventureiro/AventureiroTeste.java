@@ -10,7 +10,7 @@ import br.edu.infnet.appaventureiro.model.domain.Aventureiro;
 import br.edu.infnet.appaventureiro.model.domain.Usuario;
 import br.edu.infnet.appaventureiro.model.service.AventureiroService;
 
-@Order(3)
+@Order(2)
 @Component
 public class AventureiroTeste implements ApplicationRunner {
 

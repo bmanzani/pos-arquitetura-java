@@ -19,8 +19,9 @@ public class AventureiroController {
 	private AventureiroService aventureiroService;
 
 	@GetMapping(value = "/aventureiro/lista")
-	public String telaLista(Model model) {
-		model.addAttribute("listagem", aventureiroService.obterLista());
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
+		model.addAttribute("listagem", aventureiroService.obterLista(usuario));
+		
 		return "aventureiro/lista";
 	}
 

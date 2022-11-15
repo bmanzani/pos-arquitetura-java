@@ -10,7 +10,7 @@ import br.edu.infnet.appaventureiro.model.domain.Feitico;
 import br.edu.infnet.appaventureiro.controller.EquipamentoController;
 import br.edu.infnet.appaventureiro.model.domain.Arma;
 
-@Order(4)
+@Order(3)
 @Component
 public class EquipamentoTeste implements ApplicationRunner {
 
