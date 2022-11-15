@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appaventureiro.model.domain.Aventureiro;
@@ -45,5 +46,13 @@ public class AventureiroController {
 		aventureiroService.excluir(id);
 
 		return "redirect:/aventureiro/lista";
+	}
+	
+	@PostMapping(value = "/aventureiro/cep")
+	public String obterCep(Model model, @RequestParam String cep){
+		
+		model.addAttribute("endereco", aventureiroService.obterCep(cep));
+		
+		return "aventureiro/cadastro";
 	}
 }

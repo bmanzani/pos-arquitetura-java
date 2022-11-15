@@ -1,37 +1,43 @@
 package br.edu.infnet.appaventureiro.model.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.appaventureiro.model.clients.IAventureiroClient;
+import br.edu.infnet.appaventureiro.model.clients.IEnderecoClient;
+
 import br.edu.infnet.appaventureiro.model.domain.Aventureiro;
+import br.edu.infnet.appaventureiro.model.domain.Endereco;
 import br.edu.infnet.appaventureiro.model.domain.Usuario;
-import br.edu.infnet.appaventureiro.model.repository.AventureiroRepository;
 
 @Service
 public class AventureiroService {
 
 	@Autowired
-	private AventureiroRepository aventureiroRepository;
+	private IEnderecoClient enderecoClient;
+	@Autowired
+	private IAventureiroClient aventureiroClient;
 
-	//private IEnderecoClient enderecoClient;
-	//@Autowired
-	//private IUsuarioClient usuarioClient;
-	
 	public void incluir(Aventureiro aventureiro) {
-		aventureiroRepository.save(aventureiro);
+		aventureiroClient.incluir(aventureiro);
 	}
 
 	public void excluir(Integer id) {
-		aventureiroRepository.deleteById(id);
+		aventureiroClient.excluir(id);
 	}
 
 	public Collection<Aventureiro> obterLista() {
-		return (Collection<Aventureiro>) aventureiroRepository.findAll();
+		return aventureiroClient.obterLista();
+	}
+
+	public Endereco obterCep(String cep) {
+		return enderecoClient.obterCep(cep);
 	}
 	
-	public Collection<Aventureiro> obterLista(Usuario usuario) {
-		return (Collection<Aventureiro>) aventureiroRepository.obterLista(usuario.getId());
+	public List<Aventureiro> obterLista(Usuario usuario) {
+		return (List<Aventureiro>) aventureiroClient.obterLista(usuario.getId());
 	}
 }

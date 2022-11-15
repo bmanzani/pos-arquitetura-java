@@ -29,7 +29,7 @@ public class UsuarioController {
 		return "usuario/cadastro";
 	}
 	
-	@PostMapping(value = "/cep")
+	@PostMapping(value = "/usuario/cep")
 	public String obterCep(Model model, @RequestParam String cep){
 		
 		model.addAttribute("endereco", usuarioService.obterCep(cep));

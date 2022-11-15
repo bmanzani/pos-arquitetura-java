@@ -1,4 +1,4 @@
-package br.edu.infnet.appaventureiro.model.domain;
+package br.edu.inftnet.apiaventureiro.model.domain;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,10 +22,10 @@ public class Aventureiro {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	@OneToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "idEndereco")
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="idEndereco")
 	private Endereco endereco;
-
+	
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -38,7 +38,7 @@ public class Aventureiro {
 	public String toString() {
 		return id + ";" + nome + ";" + classe + ";" + level;
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
