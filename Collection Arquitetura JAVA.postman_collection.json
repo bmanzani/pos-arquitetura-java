@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "c1e8aff6-5789-458a-851d-4ffcc4c9a8f1",
+		"name": "Collection Arquitetura JAVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6766554"
+	},
+	"item": [
+		{
+			"name": "api-usuario localhost:8081",
+			"item": [
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8081/api/usuario/1/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8081/api/usuario/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedrinho\",\r\n    \"email\": \"pedro@pedro.com\",\r\n    \"senha\": \"123\",\r\n    \"endereco\": {\r\n        \"cep\": \"88888-999\",\r\n        \"logradouro\": \"Rua teste\",\r\n        \"complemento\": \"Complemento teste\",\r\n        \"bairro\": \"Bairro teste\",\r\n        \"localidade\": \"Localidade teste\",\r\n        \"uf\": \"RJ\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/usuario/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "VALIDATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/usuario/validar?email=teste@teste.com&senha=12223",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"validar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "teste@teste.com"
+								},
+								{
+									"key": "senha",
+									"value": "12223"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-aventureiro localhost:8082",
+			"item": [
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8082/api/aventureiro/1/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8082/api/aventureiro/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "GET by USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/api/aventureiro/listarporid?id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"aventureiro",
+								"listarporid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sylvanas Windfury\",\r\n    \"classe\": \"Arqueiro\",\r\n    \"level\": 140,\r\n    \"usuario\": { \r\n        \"id\":1\r\n    },\r\n    \"endereco\": {\r\n        \"cep\": \"14181-999\",\r\n        \"logradouro\": \"Rua teste\",\r\n        \"complemento\": \"Complemento teste\",\r\n        \"bairro\": \"Bairro teste\",\r\n        \"localidade\": \"Localidade teste\",\r\n        \"uf\": \"SP\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8082/api/aventureiro/incluir"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
